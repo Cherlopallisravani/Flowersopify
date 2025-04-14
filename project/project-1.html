@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flower sopify </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- costom css file link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
+      <style>
+        /*header*/
+        :root{
+            ---pink:#e84393;
+        }
+*{
+  margin:0;  padding:0;
+  box-sizing:border-box;  
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  outline:none; border:none;
+  text-decoration:none;
+  text-transform:capitalize;
+     transition:2s linear; 
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior:smooth;
+    scroll-padding-top:6rem;
+    overflow-x:hidden;
+}
+section{
+    padding: 2rem 9%;
+}
+.heading{
+    text-align:center;
+    font-size:4rem;
+    color:#333;
+    padding:1rem;
+    margin:2rem;
+    background:#f5dee9;
+}
+.heading span{
+    color:#c11166;
+
+}
+.btn{
+    display:inline-block;
+    margin-top:1rem;
+    border-radius:5rem;
+    background-color:#333;
+    color:#fff;
+    padding:1rem 3.5rem;
+    cursor:pointer;
+    font-size: 1.7rem;
+
+}
+.btn:hover{
+    background-color:var(---pink);
+}
+header{
+    position:fixed;
+    top:0; left:0; right:0;
+    background-color:rgb(247, 243, 247);
+    padding:2rem 9%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    z-index:1000;
+    box-shadow: 0.5rem 1rem reba(0,0,0.1);
+}
+    .logo{
+    font-size:3rem;
+    color:#333;
+    font-weight:bolder;
+}
+.logo span{color:var(---pink);}
+nav{
+    font-size:2rem;
+    color:#666;
+    margin-left:1.5rem;
+    display: flex;
+} 
+nav a:hover{
+    color:var(---pink);
+}
+  a{
+    font-size:2.5rem;
+    color:#333;
+    padding: 01.5rem;
+    text-decoration: none;
+   
+} 
+div a:hover{
+    color:var(---pink);  
+}
+ header #toggler{
+    display:none;
+ }
+.fa-bars{
+font-size:3rem;
+color: #333;
+border-radius:.5rem;
+padding:.5rem 1.5rem;
+cursor:pointer;
+border: 2px solid rgba(0,0,0,3);
+display:none; 
+}
+/*home page*/
+ .home{
+    display:flex;
+    align-items:center;
+    min-height:100vh;
+    background:url(./images/home-bg.jpg );
+     background-size: cover;
+     background-position:center ;
+ }
+
+
+ /*about as*/
+ .content{
+    max-width: 50rem;
+ 
+}
+ 
+
+ .content span{
+    font-size:2.5rem;
+    color:var(---pink);
+    padding: 1rem 0;
+    line-height:1.5;
+
+}
+.content h3{
+    font-size:4rem ;
+}
+.content p{
+    font-size: 1.5rem;
+    color:rgb(236, 101, 124);
+    padding: 1rem 0;
+    line-height:1.5;
+} 
+ .sections.row{
+    display:flex;
+    align-items:center;
+    gap:2rem;
+    flex-wrap:wrap;
+    padding:2rem ;
+    padding-bottom:3rem;
+}
+.videocontainer{
+    flex:1 1 30rem;
+    position:relative;
+}
+.videocontainer video{
+    width:100%;
+    border:1.5rem solid #fff;
+    border-radius:0.5rem;
+    box-shadow: 0.5rem 1rem rgb(237, 210, 219);
+    height:100%;
+    object-fit:cover;
+}
+.videocontainer h3{
+    position:absolute;
+    top:50%;; transform:translate(0%) ;
+    font-size:4rem;
+    background-color:white;
+    width:100%;
+    padding:1rem 2rem;
+    text-align:center;
+    mix-blend-mode:screen; 
+    
+}
+ .contents{
+    flex:1 1 20rem; 
+}
+.contents h3{
+font-size: 3rem;
+color: #1d1c1c;
+width: 100%;
+}
+.contents p{
+    font-size:1.5rem;
+    color: #27262699;
+    padding: 3rem 0;
+    width: 100%;
+}
+/* iconss */
+.iconscontainer{
+background-color:#eee;
+display:flex;
+flex-wrap:wrap;
+gap:1.5rem;
+padding-top:5rem;
+padding-bottom:5rem ;
+
+}
+ 
+.iconss{
+background-color:#fff;
+border:1px solid rgba(0,0,0,1);
+padding:2rem;
+display:flex;
+align-items:center;
+flex:1px;
+box-shadow: #5b5959;
+ }
+.iconscontainer.icons img{
+    height:5rem;
+    margin-right:2rem;
+}
+.iconscontainer.icons h3{
+color: #333;
+padding-bottom:.5rem;
+font-size:1.5rem;
+
+}
+
+.iconscontainer.icons span{
+    color: #555;
+    font-size:1.3rem;
+
+}
+
+/*latest product*/
+.card {
+    border: none;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.card-img-top{
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1); 
+}
+
+.discount-badge {
+    position: absolute;
+    font-size:15px;
+    top:10px;
+    left:10px;
+    background-color: rgb(245, 218, 234);
+    color: rgb(245, 12, 171);
+    padding:10px;
+    border-radius: 2px;
+}
+
+.icon-container {
+    display: flex; 
+    justify-content: space-evenly; 
+    margin-top: 50px; 
+    align-items: center;
+    color: white; 
+    border-radius: 20px;
+    padding: 10px;
+    transform: translateY(20px); 
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+.card:hover .icon-container {
+    transform: translateY(0); 
+    opacity: 1;
+}
+
+.icon-container  div{
+
+    background-color:rgb(235, 77, 130); 
+height:60px;
+width: 200px;
+
+    transition: background-color 0.3s ease; 
+}
+.icon-container div:nth-child(1):hover {
+    background-color: skyblue; 
+}
+
+.icon-container div:nth-child(2):hover {
+    background-color: rgb(103, 103, 245); 
+}
+
+
+.icon-container div:nth-child(3):hover {
+    background-color: green;
+}
+
+.icon {
+line-height:7rem;
+font-size:2rem;
+color: #fff;
+    width:40px;
+    height:30px;
+    margin:20px;
+    transition: color 0.3s ease;
+color: #fff;
+}
+.icon-container p{
+ font-size:15px;
+ padding:15px;
+}
+.card-title{
+
+  font-size:20px;
+}
+
+.text-danger{font-size: 20px;}
+.text-muted{
+  font-size: 1.5rem;
+font-weight:lighter;
+color: #484747;
+text-decoration:line-through;
+}
+/*reviwes*/
+.box{
+flex: 1 1 30rem;
+box-shadow: .3rem .3rem .3rem .3rem rgb(127, 126, 126);
+border-radius:5px;
+border:1px solid white;
+position:relative;
+}
+   
+
+.box-cont{
+display:flex;
+flex-wrap: wrap;
+gap: 1.5rem;
+
+}
+
+.boxs{
+flex: 1 1;
+box-shadow: 0.5rem 1.5rem palevioletred;
+border:white;
+border-radius:1px;
+padding:3rem 2rem;
+position: relative;
+box-shadow: #5b5959;
+}
+.fa-quote-right{
+ position: absolute;
+ bottom: 3rem; right:3rem;
+ font-size: 6rem;
+ color:#938f8f;
+}
+.stars i{
+    color: #c11166;
+    font-size: 2rem;
+}
+
+
+
+.box-cont p{
+    color: #62606099;
+    font-size: 1.5rem;
+}
+.user{
+    display:flex;
+    text-align: center;
+    padding-top:2rem ;
+
+
+}
+
+.user img{
+height: 6rem;
+width: 6rem;
+border-radius:50%;
+object-fit: cover;
+margin-right:1rem;
+
+}
+.user h3{
+
+font-size: 2rem;
+color: #5a5858;
+
+}
+.user i{
+    color: #e84393;
+    font-size: 2rem;
+}
+.user span{
+
+font-size: 1.5rem;
+color: #9999;
+
+}
+.contact.row{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+}
+
+.contact.row.from{
+flex:1 1 40rem;
+padding: 2rem 2.5rem;
+box-shadow: 0.5rem 1.5rem pink;
+border: 1rem solid #5a5858;
+background:#fff ;
+border-radius: 0.5rem;
+
+
+}
+.contact.row image{
+flex:1 1 40rem;
+}
+.contact.row img{
+width:100%
+}
+
+
+/*from*/
+
+.from{
+ border: 1px solid rgb(250, 207, 242);   
+padding:2rem;
+font-size: 1.7rem;
+color: #555;
+text-transform: none;
+margin:5rem ;
+width:50% ;
+background-color:white;
+border-radius: 10px;
+
+box-shadow:.3rem .3rem .3rem .3rem  #efbedd;
+}
+.boxss{
+    flex: 1 1;
+    gap:5rem;
+width:100% ;
+border:1px solid rgb(116, 113, 113);
+border-radius:5px;
+padding:3rem 2rem;
+position: relative;
+background-color: white;
+box-shadow:.3rem .3rem .3rem .3rem  #938f8f;
+}
+.from:focus{
+border: #e394ba;
+}
+ .textarea{
+    height:2rem;
+    resize: none;
+}
+ /*footer*/
+.boxcont{
+display:flex;
+flex-wrap: wrap;
+gap:.5rem;
+
+}
+
+ .boxcont.box{
+border:white;
+border-radius:5px;
+padding:3rem 2rem;
+position: relative;
+} 
+.boxcont a{
+    font-size:1rem;
+    display: block;
+    color:#333;
+    padding: 1rem 0;
+}
+
+.boxcont.h3{
+color: #141313;
+font-size:4rem;
+padding: 1rem 0;
+}
+
+
+.boxcont.a:hover{
+     color: #d21a73;
+    text-decoration:underline;
+    
+
+}
+.boxcont.box img{
+    margin-top:1rem;}
+.credit{
+        text-align: center;
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+        padding-top: 2.5rem;
+        font-size: 2rem;
+        border-top: 1rem solid rgb(121, 117, 117);
+
+    }
+
+ .credit span{
+    color: #c11166;
+ } 
+ 
+
+
+/* media queries */
+  @media(max-width:991px){
+    html{
+    font-size:55%; 
+}
+header{
+    padding: 2rem;
+}
+}
+ @media(max-width:786px){
+   .fa-bars{
+    display:block;
+   } 
+   .nav{
+    position:absolute;
+    top:100%; left:0; right:0;
+    background-color: #eee;
+    clip-path:polygon(0 0,100% 0, 100% 0,0 0);
+    border-top:1rem solid rgba(0,0,0,1);
+    
+   }
+   header #toggler:checked ~.nav{
+    clip-path: polygon(0 0,100% 0, 100% 100%, 0 100%); 
+}
+ .nav a{
+    margin:1.5rem ;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-top:1rem solid rgba(0,0,0,1);
+    display:block;
+    
+}
+
+}
+@media(max-width:450px){
+    html{
+    font-size:50%; 
+}
+.heading{
+    font-size: 3rem;
+}
+
+} 
+
+     </style>
+</head>
+<body>
+    <!-- the start header -->
+   <header>
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+   
+<a href="#" class="logo"> Flower sopify <span>.</span></a>
+
+<nav class="navbar">
+    
+<a href="#Home">Home</a>
+<a href="#About">About</a>
+<a href="#product">Product</a>
+<a href="#review">review</a>
+<a href="#Contact">Contact</a>
+</nav>
+<div class="icons">
+<a href="#"class="fas fa-heart"></a>
+<a href="#"class="fas fa-shopping-cart"></a>
+<a href="#"class="fas fa-user"></a>
+<a href="#" class="fas fa-menu"></a>
+</div>
+
+
+   </header> 
+<!-- home section start -->
+
+<section  class="home" id="home">
+    
+<div class="content">
+
+    <h3>fresh flower </h3>
+    <span>natural & beautyful flower</span>
+    <p> Lorem ipsum dolor sit amet consectetur adipisixing elit. Beatae labourm ut minus 
+        correnti dolorum dolore assumenda ista voluptate dolorem pariatur.
+    </p>
+<a href="#" class="btn">Shop now</a>
+</div>
+</section>
+<h1 class="heading"><span>About</span>  Us</h1>
+<section class="sections" id="sections">
+
+    <div class="row">
+        <div class="videocontainer">
+        <video src="./images/about-vid.mp4" loop autoplay muted></video>
+        <h3 class="">best flower sellers</h3>
+        </div>
+    
+        <div class="contents">
+        <h3> why choose us?</h3>
+   <p>Lorem ipsum dolor sit amet consectetur adipisixing elit.  Rem cumque 
+            sit nemo particular corpors perpiciatic aspernatur a ullam reudiandae autem asperiores
+             quibusdam omnis commodi alias repellat illum, unde  optio 
+             temporibus .</p>
+ <p>Lorem ipsum dolor sit amet consectetur adipisixing elit. Beatae labourm ut minus 
+                correnti dolorum dolore assumenda ista voluptate dolorem pariatur.</p>
+ <a href="#" class="btn">learn more</a>
+        </div>
+ </div>
+</section>
+<!-- iconss -->
+<section class="iconscontainer">
+
+<div class="iconss">
+    <img src="./images/icon-1.png" alt="">
+<div class="info">
+    <h3>free delivery</h3>
+    <span> on all orders</span>
+</div>
+</div>
+<div class="iconss">
+    <img src="./images/icon-2.png" alt="">
+<div class="info">
+    <h3>10 days return</h3>
+    <span> moneyback guarentee</span>
+</div>
+</div>
+<div class="iconss">
+    <img src="./images/icon-3.png" alt="">
+<div class="info">
+    <h3>offer& gifts</h3>
+    <span> On all orders</span>
+</div>
+</div><div class="iconss">
+    <img src="./images/icon-4.png" alt="">
+<div class="info">
+    <h3>secure payment</h3>
+    <span> protected by order</span>
+</div>
+</div>
+
+</section>
+  <!-- latest peoducts -->
+  <section id="products" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center">Latest <span class="text-danger">Products</span></h2>
+      <div class="row mt-4">
+        <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card text-center">
+              <img src="./images/img-1.jpg" class="card-img-top" alt="Flower Pot">
+              <div class="discount-badge">-10%</div>
+              <div class="icon-container">
+                <div>
+                  <i class="bi bi-heart-fill icon"></i></div>
+                  <div> <p>Add to cart</p></div>
+                   <div><i class="bi bi-sign-turn-right-fill icon"></i></div>
+            </div>
+              <div class="card-body">
+                <h5 class="card-title">Flower Pot</h5>
+                <p class="text-danger">$16.99 <small class="text-muted"><s>$18.99</s></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card text-center">
+              <img src="./images/img-2.jpg" class="card-img-top" alt="Flower Pot">
+              <div class="discount-badge">-15%</div>
+              <div class="icon-container">
+                <div>
+                <i class="bi bi-heart-fill icon"></i></div>
+               <div> <p>Add to cart</p></div>
+                <div><i class="bi bi-sign-turn-right-fill icon"></i></div>
+            </div>
+              <div class="card-body">
+                <h5 class="card-title">Flower Pot</h5>
+                <p class="text-danger">$20.99 <small class="text-muted"><s>$25.99</s></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card text-center">
+              <img src="./images/img-3.jpg" class="card-img-top" alt="Flower Pot">
+              <div class="discount-badge">-5%</div>
+              <div class="icon-container">
+                <div>
+                <i class="bi bi-heart-fill icon"></i></div>
+               <div> <p>Add to cart</p></div>
+                <div><i class="bi bi-sign-turn-right-fill icon"></i></div>
+            </div>
+              <div class="card-body">
+                <h5 class="card-title">Flower Pot</h5>
+                <p class="text-danger">$1.99 <small class="text-muted"><s>$5.99</s></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card text-center">
+              <img src="./images/img-4.jpg" class="card-img-top" alt="Flower Pot">
+              <div class="discount-badge">-20%</div>
+              <div class="icon-container">
+                <div>
+                <i class="bi bi-heart-fill icon"></i></div>
+               <div> <p>Add to cart</p></div>
+                <div><i class="bi bi-sign-turn-right-fill icon"></i></div>
+            </div>
+              <div class="card-body">
+                <h5 class="card-title">Flower Pot</h5>
+                <p class="text-danger">$12.99 <small class="text-muted"><s>$15.99</s></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card text-center">
+              <img src="./images/img-5.jpg" class="card-img-top" alt="Flower Pot">
+              <div class="discount-badge">-8%</div>
+              <div class="icon-container">
+                <div>
+                <i class="bi bi-heart-fill icon"></i></div>
+               <div> <p>Add to cart</p></div>
+                <div><i class="bi bi-sign-turn-right-fill icon"></i></div>
+            </div>
+              <div class="card-body">
+                <h5 class="card-title">Flower Pot</h5>
+                <p class="text-danger">$8.99 <small class="text-muted"><s>$11.99</s></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card text-center">
+              <img src="./images/img-6.jpg" class="card-img-top" alt="Flower Pot">
+              <div class="discount-badge">-24%</div>
+              <div class="icon-container">
+                <div>
+                <i class="bi bi-heart-fill icon"></i></div>
+               <div> <p>Add to cart</p></div>
+                <div><i class="bi bi-sign-turn-right-fill icon"></i></div>
+            </div>
+              <div class="card-body">
+                <h5 class="card-title">Flower Pot</h5>
+                <p class="text-danger">$5.99 <small class="text-muted"><s>$7.99</s></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card text-center">
+              <img src="./images/img-7.jpg" class="card-img-top" alt="Flower Pot">
+              <div class="discount-badge">-27%</div>
+              <div class="icon-container">
+                <div>
+                <i class="bi bi-heart-fill icon"></i></div>
+               <div> <p>Add to cart</p></div>
+                <div><i class="bi bi-sign-turn-right-fill icon"></i></div>
+            </div>
+              <div class="card-body">
+                <h5 class="card-title">Flower Pot</h5>
+                <p class="text-danger">$8.99 <small class="text-muted"><s>$9.99</s></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card text-center">
+              <img src="./images/img-8.jpg" class="card-img-top" alt="Flower Pot">
+              <div class="discount-badge">-4%</div>
+              <div class="icon-container">
+                <div>
+                <i class="bi bi-heart-fill icon"></i></div>
+               <div> <p>Add to cart</p></div>
+                <div><i class="bi bi-sign-turn-right-fill icon"></i></div>
+            </div>
+              <div class="card-body">
+                <h5 class="card-title">Flower Pot</h5>
+                <p class="text-danger">$10.99 <small class="text-muted"><s>$12.99</s></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-12 mb-4">
+            <div class="card text-center">
+              <img src="./images/img-9.jpg" class="card-img-top" alt="Flower Pot">
+              <div class="discount-badge">-37%</div>
+              <div class="icon-container">
+                <div>
+                <i class="bi bi-heart-fill icon"></i></div>
+               <div> <p>Add to cart</p></div>
+                <div><i class="bi bi-sign-turn-right-fill icon"></i></div>
+            </div>
+              <div class="card-body">
+                <h5 class="card-title">Flower Pot</h5>
+                <p class="text-danger">$14.99 <small class="text-muted"><s>$19.99</s></small></p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  <!-- Reviwes -->
+     <section class="review" id="review">
+        <h1 class="heading">Costomer's<span> Review</span> </h1>
+
+<div class="box-cont">
+<div class="boxs">
+
+<div class="stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<p>To wrap up, looking at these 45 Shopify flower stores shows us a lot about selling flowers online. 
+    Each one is special in its own way and teaches us how to mix smart business with creative ideas. 
+    This is a great starting point for anyone interested in online flower shops or looking to improve their own. 
+    These stores really show how important it is to have a good website and use
+     Shopify’s tools well to make customers happy.</p>
+     <div class="user">
+        <img src="./images/pic-1.png" alt="">
+        <div class="user-info">
+<h3>jhon deo/</h3>
+<span>happy costomer</span>
+
+
+        </div>
+     </div>
+
+
+<span class="fas fa-quote-right"></span>
+
+</div>
+
+<div class="boxs">
+
+    <div class="stars">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    </div>
+    <p>To wrap up, looking at these 45 Shopify flower stores shows us a lot about selling flowers online. 
+        Each one is special in its own way and teaches us how to mix smart business with creative ideas. 
+        This is a great starting point for anyone interested in online flower shops or looking to improve their own. 
+        These stores really show how important it is to have a good website and use
+         Shopify’s tools well to make customers happy.</p>
+         <div class="user">
+            <img src="./images/pic-2.png" alt="">
+            <div class="user-info">
+    <h3>jenny solw/</h3>
+    <span>happy costomer</span>
+    
+    
+            </div>
+         </div>
+    
+    
+    <span class="fas fa-quote-right"></span>
+    
+    </div>
+
+
+    <div class="boxs">
+
+        <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        </div>
+        <p>To wrap up, looking at these 45 Shopify flower stores shows us a lot about selling flowers online. 
+            Each one is special in its own way and teaches us how to mix smart business with creative ideas. 
+            This is a great starting point for anyone interested in online flower shops or looking to improve their own. 
+            These stores really show how important it is to have a good website and use
+             Shopify’s tools well to make customers happy.</p>
+             <div class="user">
+                <img src="./images/pic-3.png" alt="">
+                <div class="user-info">
+        <h3>deylo doj/</h3>
+         <span>happy costomer</span>
+                </div>
+             </div>
+        <span class="fas fa-quote-right"></span>
+    
+        </div>
+</div>
+     </section>
+
+<!-- contact section start -->
+
+     <h1 class="heading"> <span>Contact</span> Us</h1>
+
+     <section class="sections" id="sections">
+
+        <div class="row">
+            
+            <div class="from">
+                <input type="text" placeholder="name" class="boxss" ><br>
+                
+                <input type="email" placeholder="email" class="boxss"><br>
+                
+                <input type="number" placeholder="number" class="boxss"><br>
+                
+                <textarea name="" class="boxss" placeholder="message" id=""  cols="30" rows="3"></textarea><br>
+                
+                <input type="submit" value="send message" class="btn">  
+            </div>
+        
+            <div class="contents">
+                <img src="./images/contact-img (1).svg" alt="">
+            </div>
+     </div>
+    </section>
+
+
+<!-- footer start -->
+ <footer>
+    <div class="boxcont" >
+<div class="box" >
+<h3 >quick links</h3>
+<ul >
+   <li> <a href="">home</a></li>
+   <li><a href="">about</a></li>
+   <li>  <a href="">products</a></li>
+   <li><a href="">reviews</a></li>
+   <li><a href="">contact</a> </li>
+</ul>
+
+</div>
+
+<div class="box">
+    <h3 >extra links</h3>
+    <ul >
+     <li><a href="">my contact</a></li>
+     <li><a href="">my order</a></li>
+     <li><a href="">my favorites</a></li>
+    
+</ul>
+    </div>
+
+    <div class="box">
+        <h3 >location</h3>
+        <ul > 
+             <li><a href="">india</a></li>
+         <li> <a href="">us</a></li>
+         <li><a href="">japan</a></li>
+        <li><a href="">faresh</a></li>
+         <li><a href="">rasya</a></li>
+        </ul>
+        </div>
+
+        <div class="box">
+            <h3 >contact info</h3>
+            <ul >
+         <li><a href="">+132-456-3456</a></li>
+         <li> <a href="">shoban@gmail.com</a></li>
+         <li> <a href="">bengalore,karnataka-525231</a></li>
+         <li> <img src="./images/payment.png" alt=""></li>
+            </ul>
+            </div>
+
+    </div>
+
+</footer>
+
+<div class="credit">created by<span>mr. web designer </span> | all righs reseved </div>
+
+ 
+
+
+
+
+
+
+</body>
+</html>
